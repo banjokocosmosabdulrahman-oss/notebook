@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: dark;"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abdulrahman’s Notebook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&amp;family=Newsreader:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF2EC;--surface:#E1E9DF;--ink:#1B2A2F;--muted:#55665F;--accent:#0F6B5C;--mark:#E8A317;--line:#C5D1C6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121C1A;--surface:#1A2825;--ink:#E6EEE8;--muted:#9BAEA6;--accent:#4FC3A9;--mark:#F0B73A;--line:#2C3E3A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121C1A;--surface:#1A2825;--ink:#E6EEE8;--muted:#9BAEA6;--accent:#4FC3A9;--mark:#F0B73A;--line:#2C3E3A;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Newsreader,Georgia,serif;font-size:19px;line-height:1.65}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:26px 0;border-bottom:2px solid var(--ink)}
+.brand{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:1.25rem;text-decoration:none;letter-spacing:-.01em}
+.brand b{color:var(--accent)}
+nav{display:flex;gap:18px;align-items:center;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:500;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+.theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:4px 12px;font:inherit;cursor:pointer}
+.hero{padding:64px 0 36px}
+.hero h1{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(2.4rem,8vw,4.6rem);line-height:1;letter-spacing:-.03em;margin:0 0 20px;max-width:12ch}
+.hero p{max-width:34em;color:var(--muted);margin:0;font-size:1.15rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:32px 0 8px}
+.tag{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:.9rem;font-weight:500;border:1.5px solid var(--ink);background:none;color:var(--ink);padding:5px 14px;border-radius:999px;cursor:pointer}
+.tag[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.post{display:grid;grid-template-columns:120px 1fr;gap:8px 28px;padding:28px 0;border-top:1px solid var(--line);text-decoration:none}
+.post:hover h2{color:var(--accent)}
+.post time,.meta{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:.88rem;color:var(--muted)}
+.post h2{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.7rem;line-height:1.15;letter-spacing:-.015em;margin:0 0 8px}
+.post p{margin:0;color:var(--muted)}
+.post.lead{background:var(--surface);padding:28px;border:0;border-radius:6px;grid-template-columns:1fr;margin-bottom:12px}
+.post.lead h2{font-size:2.3rem;box-shadow:inset 0 -.32em 0 var(--mark);display:inline;line-height:1.3}
+.post.lead .body{display:block}
+.empty{padding:40px 0;color:var(--muted)}
+article{padding:48px 0 24px;max-width:38em}
+article h1{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(2.1rem,6vw,3.3rem);line-height:1.05;letter-spacing:-.025em;margin:10px 0 24px}
+article h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.35rem;margin:2em 0 .3em}
+article pre{background:var(--surface);padding:16px;border-radius:6px;overflow-x:auto;font-size:.88rem;line-height:1.5}
+article code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.back{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:500;color:var(--accent);text-decoration:none}
+.form{padding-bottom:20px}.form label{display:block;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:500;font-size:.95rem;margin:18px 0 6px}.form input,.form textarea{width:100%;font:inherit;font-size:1rem;background:var(--surface);color:var(--ink);border:1.5px solid var(--line);border-radius:6px;padding:10px 12px}.form textarea{min-height:300px;line-height:1.5}.btn{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;font-size:1rem;background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:10px 22px;cursor:pointer;margin-top:20px}.btn.alt{background:none;color:var(--ink);border:1.5px solid var(--ink)}.btn:disabled{opacity:.5}article img{display:block;max-width:100%;height:auto;border-radius:6px;margin:1.4em 0}#status{margin-top:14px;color:var(--muted);font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:.95rem}
+.profile{display:flex;gap:22px;align-items:center;flex-wrap:wrap;background:var(--surface);border-radius:8px;padding:22px;margin:32px 0}
+.avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0;flex:none;background:var(--accent);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:2.8rem}
+.profile h2{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.5rem;margin:0 0 6px}
+.profile p{margin:3px 0;font-size:1rem;word-break:break-word}
+.profile a{color:var(--accent);font-weight:600}
+.comments{margin-top:48px;border-top:2px solid var(--ink);padding-top:8px}
+footer{margin-top:60px;padding:28px 0 40px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:.9rem;color:var(--muted)}
+@media(max-width:600px){.post{grid-template-columns:1fr}.post.lead h2{font-size:1.8rem}header.top{flex-wrap:wrap;gap:10px}nav{flex-wrap:wrap;gap:14px}}
+@media(prefers-reduced-motion:no-preference){.hero h1{animation:rise .7s ease-out both}@keyframes rise{from{opacity:0;transform:translateY(14px)}}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="#home">Abdulrahman’s <b>Notebook</b></a>
+  <nav><a href="#home">Posts</a><a href="#about">About</a><button class="theme" id="theme" aria-label="Toggle dark mode">Theme</button></nav>
+</header>
+<main id="view"></main>
+<footer><span>© 2026 Abdulrahman’s Notebook</span></footer>
+</div>
+<script>
+var GISCUS={repo:"YOUR-USERNAME/YOUR-REPO",repoId:"YOUR_REPO_ID",category:"Announcements",categoryId:"YOUR_CATEGORY_ID"};
+var PHOTO="53bc9e43a46a67191d34f9ea527608ee";
+var POSTS=[{"id":"post-7","date":"2026-11-01","tag":"","title":"VIBE-CODING","sum":"How I vibe-coded I successfully vibe-coded and published my website using AI, and my reward for shipping it was realizing I didn't actually learn a single line of code.","body":["\u003cp>The prompt was ready, the AI was flying, and my fingers barely had to touch the keyboard. In record time, the repository was initialized, the styles were injected, and the whole thing was live on the web.\u003c/p>","\u003cp>I leaned back, staring proudly at the shiny new URL blinking on my screen. I had built a website in minutes. But as I stared at the code, a quiet dread washed over me. I clicked through the live pages, realizing with absolute clarity: I had built it, but I hadn't learned a single thing.\u003c/p>","\u003cimg src=\"435f7c30e1777ccb7286f0e161178e14.jpg\" alt=\"photo\" loading=\"lazy\">","\u003cimg src=\"2685a5f170077e2772cf160570d94a44.jpg\" alt=\"photo\" loading=\"lazy\">","\u003cimg src=\"db5048dfc0e85c44df9eb93eeb1542fd.jpg\" alt=\"photo\" loading=\"lazy\">"]},{"id":"post-1","date":"2026-11-01","tag":"Diary","title":"Why I’m starting this dev diary","sum":"A student writing down what he learns, one week at a time.","body":["\u003cp>Most coding advice is written by people who learned years ago. I want to write while I’m still confused, because that’s when explanations are most useful.\u003c/p>","\u003ch3>What to expect\u003c/h3>\u003cp>One short post a week: what I built, what broke, and what finally fixed it.\u003c/p>","\u003ch3>Why public\u003c/h3>\u003cp>Writing it down forces me to understand it, and it leaves a trail of proof that I’m improving.\u003c/p>"]},{"id":"post-6","date":"2026-10-30","tag":"","title":"Project: a login system in C","sum":"How I taught a C program to remember who you are.","body":["\u003cp>Before this project, every C program I wrote did its job and then forgot everything. Run it again and it was like meeting a stranger. I wanted a program that could remember people, and a login system felt like the most honest test, because it only works if the program remembers.\u003c/p>","\u003ch3>The idea\u003c/h3>\u003cp>I kept it simple on purpose. A new user registers with a username and a password. Later they come back, type the same details, and the program decides whether to let them in. Register, log in, exit: three actions, nothing more.\u003c/p>","\u003ch3>How it works\u003c/h3>\u003cp>When someone registers, the program saves their details in a database. When they log in, it looks up the username, compares the password, and replies with either a welcome or a clear error. Everything runs inside a menu loop, so the user can keep choosing until they decide to exit.\u003c/p>","\u003ch3>Where it went wrong\u003c/h3>\u003cp>Comparing text in C is not like comparing numbers, and I found that out the hard way. Then came the input problems: spaces, empty fields and very long names broke my early versions. Some days a single missing semicolon cost me an hour.\u003c/p>","\u003ch3>What fixed it\u003c/h3>\u003cp>I started testing the ugly cases on purpose: a wrong password, an unknown username, empty input, a name that was far too long. Once I treated every input as something that could go wrong, the program became much steadier. I also learned to build one small piece, run it, and only then add the next.\u003c/p>","\u003ch3>What it taught me\u003c/h3>\u003cp>A login system looks small, but it touches almost everything: input, strings, stored data and decisions. It was the first project where I felt I was building something real people could use, not just finishing an exercise.\u003c/p>","\u003ch3>What I’d improve\u003c/h3>\u003cp>Passwords should never sit in storage as readable text, so learning to hash them is the first thing I want to do next. I would also limit failed attempts and add a way to change a password.\u003c/p>"]},{"id":"post-5","date":"2026-10-29","tag":"","title":"Project: my first HTML webpage","sum":"The assignment that showed me how a webpage is really made.","body":["\u003cp>For one of my course assignments, I had to build a webpage with HTML. I had used websites my whole life but never looked behind one. This was the first time I opened an empty file and typed a page into existence.\u003c/p>","\u003ch3>Starting from nothing\u003c/h3>\u003cp>It began as a blank text file and a handful of plain tags. I learned that every page has a skeleton, with a head and a body, and that headings and paragraphs go inside it. Saving the file and watching it appear in the browser was the moment it clicked.\u003c/p>","\u003ch3>What I built\u003c/h3>\u003cp>A structured page with headings, paragraphs, lists and links, arranged so someone could read it without squinting. Nothing fancy, but every line of it was mine.\u003c/p>","\u003ch3>The mistakes\u003c/h3>\u003cp>I forgot closing tags and the page looked wrong, with no error message to tell me why. HTML does not crash; it quietly shows you something strange. Indenting my code made missing tags easier to spot, and refreshing the browser after every small change saved me a lot of confusion.\u003c/p>","\u003ch3>Why it mattered\u003c/h3>\u003cp>It was a small assignment, but it changed how I see the internet: every site was built by someone typing, one tag at a time. That pushed me towards CSS and JavaScript, and later to the to-do list I wrote about in another post.\u003c/p>","\u003ch3>What I’d do differently\u003c/h3>\u003cp>I would sketch the layout on paper first and use CSS for the look from the start. I would also test the page on a phone, because most people here open pages on their phones.\u003c/p>"]},{"id":"post-2","date":"2026-10-28","tag":"Nigeria","title":"Coding with unstable power and data","sum":"Practical habits that keep you learning when NEPA and network misbehave.","body":["\u003cp>Learning to code here means planning around light and data. A few habits help a lot.\u003c/p>","\u003ch3>Go offline-first\u003c/h3>\u003cp>Download docs and course videos while you have a good connection, so a bad network doesn’t stop your day.\u003c/p>","\u003ch3>Save often, commit often\u003c/h3>\u003cp>Power can drop mid-edit. Save constantly and commit small changes so you never lose more than a few minutes.\u003c/p>","\u003ch3>Work in bursts\u003c/h3>\u003cp>Keep your laptop and power bank charged, and use your best-battery hours for hard problems.\u003c/p>"]},{"id":"post-3","date":"2026-10-20","tag":"C","title":"My first C program crashed. Here’s why.","sum":"Segmentation faults, explained without the jargon.","body":["\u003cp>My calculator worked once, then crashed on the next input. The error just said “segmentation fault”, which tells a beginner nothing.\u003c/p>","\u003ch3>What it usually means\u003c/h3>\u003cp>Your program touched memory it doesn’t own. Common causes are an array index that’s too big or a pointer that points nowhere.\u003c/p>","\u003ch3>How I debug it now\u003c/h3>\u003cp>Add prints before and after each suspicious line, and the crash shows you exactly where it happens.\u003c/p>"]},{"id":"post-4","date":"2026-10-10","tag":"Web","title":"I built a to-do list in 20 lines of code","sum":"Plain HTML, CSS and JavaScript, no frameworks, and the bugs I hit along the way.","body":["\u003cp>My first real webpage was a to-do list. No frameworks, just three pieces: HTML for the structure, CSS for the look, and JavaScript for the behaviour.\u003c/p>","\u003ch3>The HTML\u003c/h3>\u003cpre>\u003ccode>&lt;input id='task' placeholder='Add a task'&gt;\n&lt;button id='add'&gt;Add&lt;/button&gt;\n&lt;ul id='list'&gt;&lt;/ul&gt;\u003c/code>\u003c/pre>","\u003ch3>The JavaScript\u003c/h3>\u003cpre>\u003ccode>add.onclick = () =&gt; {\n  if (!task.value.trim()) return;\n  const li = document.createElement('li');\n  li.textContent = task.value;\n  li.onclick = () =&gt; li.classList.toggle('done');\n  list.append(li);\n  task.value = '';\n};\u003c/code>\u003c/pre>","\u003ch3>The CSS\u003c/h3>\u003cpre>\u003ccode>.done { text-decoration: line-through; color: gray; }\u003c/code>\u003c/pre>","\u003ch3>Bugs I hit\u003c/h3>\u003cp>Empty tasks kept getting added, which is why the first line of the function checks for blank input. Then I refreshed the page and lost everything, because nothing was saved yet.\u003c/p>","\u003ch3>Next step\u003c/h3>\u003cp>Save tasks with localStorage so they survive a refresh. That will be next week’s post.\u003c/p>"]}];
+var TAGS=["All"].concat(POSTS.map(function(p){return p.tag}).filter(function(t,i,a){return a.indexOf(t)===i}));
+var cur="All",view=document.getElementById("view");
+function fmt(d){return new Date(d+"T00:00:00").toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"})}
+function home(){
+  var list=POSTS.filter(function(p){return cur==="All"||p.tag===cur});
+  var h='<section class="hero"><h1>A student dev diary from Nigeria.</h1><p>Real notes on learning to code: what I built this week, what broke, and how I fixed it.</p>';
+  h+='</section>';
+  if(!list.length)h+='<p class="empty">No posts in this topic yet.</p>';
+  list.forEach(function(p,i){
+    var lead=i===0&&cur==="All";
+    h+='<a class="post'+(lead?' lead':'')+'" href="#'+p.id+'"><time>'+fmt(p.date)+'</time><div class="body"><h2>'+p.title+'</h2>'+(lead?'<br><br>':'')+'<p>'+p.sum+'</p></div></a>';
+  });
+  view.innerHTML=h;document.title="Abdulrahman’s Notebook";
+  view.querySelectorAll(".tag").forEach(function(b){b.onclick=function(){cur=b.dataset.tag;home()}});
+}
+function show(id){
+  var p=POSTS.filter(function(x){return x.id===id})[0];
+  if(!p)return home();
+  view.innerHTML='<article><a class="back" href="#home">← All posts</a><div class="meta" style="margin-top:28px">'+fmt(p.date)+'</div><h1>'+p.title+'</h1>'+p.body.join("")+'</article>';
+  document.title=p.title+" · Abdulrahman’s Notebook";window.scrollTo(0,0);
+var gw=document.createElement('section');gw.className='comments';gw.innerHTML='<h3>Comments</h3><p class="meta">Share your thoughts on this post. You need a free GitHub account to comment.</p>';view.querySelector('article').appendChild(gw);
+if(GISCUS.repoId.indexOf('YOUR')===0){gw.insertAdjacentHTML('beforeend','<p class="meta">Comments are not set up yet.</p>')}else{var g=document.createElement('script');g.src='https://giscus.app/client.js';[['data-repo',GISCUS.repo],['data-repo-id',GISCUS.repoId],['data-category',GISCUS.category],['data-category-id',GISCUS.categoryId],['data-mapping','specific'],['data-term',p.id],['data-strict','0'],['data-reactions-enabled','1'],['data-emit-metadata','0'],['data-input-position','top'],['data-theme','preferred_color_scheme'],['data-lang','en'],['crossorigin','anonymous']].forEach(function(a){g.setAttribute(a[0],a[1])});g.async=true;gw.appendChild(g)}
+if(isOwner){var b=document.createElement('button'),armed=false,idx=POSTS.indexOf(p);b.className='btn alt';b.textContent='Delete post';b.onclick=function(){if(!armed){armed=true;b.textContent='Click again to delete';return}POSTS.splice(idx,1);b.disabled=true;b.textContent='Deleting…';save().catch(function(){POSTS.splice(idx,0,p);b.disabled=false;b.textContent='Could not delete. Try again'})};view.querySelector('article').appendChild(b)}
+}
+function about(){
+  var ph=PHOTO?'<img class="avatar" src="profile-photo.jpg" alt="Photo of Banjoko Cosmos Olujimi">':'<div class="avatar" aria-hidden="true">B</div>';
+  view.innerHTML='<article><div class="meta">About</div><h1>Hi, I’m learning to build software.</h1><p>I’m a software engineering student in Nigeria. This diary is where I write down what I learn in C, Python, web development and maths, so other beginners can learn from my mistakes.</p><p>Want to say hello? Reach me here.</p><div class="profile">'+ph+'<div><h2>Banjoko Cosmos Olujimi</h2><p>University: Federal University of Agriculture, Abeokuta (FUNAAB)</p><p>Department: Software Engineering</p><p>Location: Abeokuta, Ogun State, Nigeria</p><p>Skills: C, Python, web development, vibe coding</p><p>Email: <a href="mailto:banjokocosmosabdulrahman@gmail.com">banjokocosmosabdulrahman@gmail.com</a></p><p>Phone: <a href="tel:+2347082110484">+234 708 211 0484</a></p><p>GitHub: <a href="https://github.com/banjokocosmosabdulrahman-oss" rel="noopener">github.com/banjokocosmosabdulrahman-oss</a></p>'+(isOwner?'<button class="btn alt" id="chg">'+(PHOTO?'Change photo':'Add photo')+'</button><input type="file" id="chgf" accept="image/*" hidden><div id="pst" role="status"></div>':'')+'</div></div></article>';
+  document.title="About · Abdulrahman’s Notebook";window.scrollTo(0,0);
+  if(isOwner){var cb=document.getElementById('chg'),cf=document.getElementById('chgf'),ps=document.getElementById('pst');
+  cb.onclick=function(){cf.click()};
+  cf.onchange=function(){var f=cf.files[0],old=PHOTO;if(!f)return;cb.disabled=true;ps.textContent='Uploading…';
+  shrink(f).then(function(b){return (window.claude&&claude.use?claude.use('assets'):Promise.resolve(null)).then(function(a){if(!a)throw new Error('Photo upload is not available.');return a.upload(b)})}).then(function(r){PHOTO=r.id;ps.textContent='Saving…';return save()}).catch(function(e){PHOTO=old;cb.disabled=false;ps.textContent='Could not save: '+((e&&(e.message||e.code))||'unknown error')})}}
+}
+function route(){var h=location.hash.slice(1);if(h==="about")about();else if(h&&h!=="home")show(h);else home()}
+window.addEventListener("hashchange",route);route();
+var isOwner=false;
+document.getElementById("theme").onclick=function(){
+  var r=document.documentElement,dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;
+  r.dataset.theme=dark?"light":"dark";
+};
+</script>
+
+
+</body></html>
